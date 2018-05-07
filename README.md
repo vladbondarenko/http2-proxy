@@ -9,4 +9,5 @@ Still on active development. Not for production use.
 # how to use
 
 docker build -t http2 .
+
 docker run --name http2 -d -p 443:443 -p 80:80 --hostname http2.internal http2
