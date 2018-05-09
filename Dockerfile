@@ -26,6 +26,8 @@ COPY brotli /bin/brotli
 RUN mkdir -p /var/www
 COPY brotli.php /var/www
 COPY webp.php /var/www
+COPY start.sh /
 RUN chown nginx:nginx /var/www/*
 RUN ulimit -n 16384
-CMD supervisord -c /etc/supervisord.conf -n
+CMD /start.sh
+
