@@ -13,4 +13,4 @@ docker build -t http2 .
 PROTO should be http or https
 ORIGIN should be ip address or domain name of origin
 
-docker run --name http2 -d -p 443:443 -p 80:80 --env PROTO=PROTOCOL_OF_ORIGIN --env ORIGIN=IP_ADDRESS_OF_ORIGIN --hostname http2.internal http2
+docker run --name http2 -d -p 443:443 -p 80:80 --env PROTO=PROTOCOL_OF_ORIGIN --env ORIGIN=IP_ADDRESS_OF_ORIGIN --env PORT=PORT_OF_ORIGIN --hostname http2.internal http2

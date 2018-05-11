@@ -50,6 +50,7 @@ sub vcl_recv {
     # Typically you clean up the request here, removing cookies you don't need,
     # rewriting the request, etc.
     #std.syslog(180,"Ip: "+client.ip+"|Country: "+country.lookup("country/names/en", client.ip));
+    set req.http.X-GEO = country.lookup("country/names/en", std.ip(req.http.X-Forwarded-For,"0.0.0.0"));
     set req.backend_hint = default;
     if(req.http.Accept-Encoding ~ "br" && req.url !~ "(?i)\.(jpg|png|gif|svg|gz|mp3|mov|avi|mpg|mp4|swf|wmf)") {
             set req.http.X-brotli = "true";
