@@ -97,4 +97,5 @@ sub vcl_deliver {
  if (req.url ~ "(?i)\.js"){
    set resp.http.Content-Type="application/javascript";
  }
+ set resp.http.Access-Control-Allow-Origin="*";
 }
